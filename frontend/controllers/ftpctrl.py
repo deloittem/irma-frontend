@@ -30,9 +30,10 @@ def upload_scan(scanid, file_path_list):
         ftp_config = config.frontend_config['ftp_brain']
         host = ftp_config.host
         port = ftp_config.port
+        auth = ftp_config.auth
         user = ftp_config.username
         pwd = ftp_config.password
-        with IrmaFTP(host, port, user, pwd) as ftp:
+        with IrmaFTP(host, port, auth, user, pwd) as ftp:
             ftp.mkdir(scanid)
             for file_path in file_path_list:
                 log.debug("scanid: %s uploading file %s", scanid, file_path)

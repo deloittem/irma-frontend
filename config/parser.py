@@ -77,6 +77,7 @@ template_frontend_config = {
     ],
     'ftp_brain': [
         ('host', TemplatedConfiguration.string, None),
+        ('auth', TemplatedConfiguration.string, "password"),
         ('port', TemplatedConfiguration.integer, 22),
         ('username', TemplatedConfiguration.string, None),
         ('password', TemplatedConfiguration.string, None),
